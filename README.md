@@ -68,4 +68,4 @@ Maximo Garmasar Vázquez
  [Linkedin](https://www.linkedin.com/in/maximogarmasarvazquez) [Github](https://github.com/maximogarmasarvazquez)
 
 ## 📚 Documentacion
-- [Documentacion del proyecto](https://docs.google.com/document/d/1v_b9NjidGaJwqzRaKyLRcYdcMo9waeXTa1sUHmAzWgk/edit?usp=sharing)
+- [Documentacion del proyecto](https://docs.google.com/document/d/1v_b9NjidGaJwqzRaKyLRcYdcMo9waeXTa1sUHmAzWgk/edit?tab=t.dg0c0luw2bnr)
