@@ -9,6 +9,7 @@ export default function AdminLayout() {
           <li><NavLink to="/admin/categories">Categorías</NavLink></li>
           <li><NavLink to="/admin/products">Productos</NavLink></li>
           <li><NavLink to="/admin/orders">Órdenes</NavLink></li>
+          <li><NavLink to="/admin/users">Usuarios</NavLink></li>
         </ul>
       </nav>
       <main style={{ flex: 1, padding: 20 }}>

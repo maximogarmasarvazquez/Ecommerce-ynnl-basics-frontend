@@ -1,30 +1,13 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import ProductList from "../../features/products/ProductList";
 
-export default function Products() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/api/products", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.error(err));
-  }, []);
-
+export default function ProductsPage() {
   return (
-    <div>
-      <h2>Productos</h2>
-      <ul>
-        {products.map((prod) => (
-          <li key={prod.id}>
-            {prod.name} - ${prod.price}
-          </li>
-        ))}
-      </ul>
+    <div className="p-4">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Gestión de Productos</h1>
+       
+      </div>
+      <ProductList />
     </div>
   );
 }

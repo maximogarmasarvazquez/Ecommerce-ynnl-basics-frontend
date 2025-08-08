@@ -1,28 +1,14 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import CategoryList from "../../features/categories/CategoryList";
 
-export default function Categories() {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/categories", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => setCategories(res.data))
-      .catch((err) => console.error(err));
-  }, []);
-
+export default function ProductsPage() {
   return (
-    <div>
-      <h2>Categorías</h2>
-      <ul>
-        {categories.map((cat) => (
-          <li key={cat.id}>{cat.name}</li>
-        ))}
-      </ul>
+    <div className="p-4">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Gestión de Categorias</h1>
+       
+      </div>
+      <CategoryList />
     </div>
   );
 }
+
