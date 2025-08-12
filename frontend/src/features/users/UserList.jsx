@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAllUsers, deleteUserById } from "./UserService";
+import { getAllUsers, deleteUserById } from "../../service/userService";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);

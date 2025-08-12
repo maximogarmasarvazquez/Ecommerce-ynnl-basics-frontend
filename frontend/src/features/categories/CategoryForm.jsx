@@ -4,7 +4,7 @@ import {
   createCategory,
   getCategoryById,
   updateCategory,
-} from "./CategoryService";
+} from "../../service/CategoryService";
 
 export default function CategoryForm() {
   const [form, setForm] = useState({ name: "" });

@@ -1,7 +1,6 @@
-// src/components/forms/LoginForm.jsx
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function LoginForm({ onSubmit }) {
+export default function LoginForm({ onSubmit, rememberMe, setRememberMe }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,7 +13,7 @@ export default function LoginForm({ onSubmit }) {
     <form onSubmit={handleSubmit}>
       <input
         type="email"
-        placeholder="Correo"
+        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
@@ -26,7 +25,15 @@ export default function LoginForm({ onSubmit }) {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button type="submit">Iniciar sesión</button>
+      <label>
+        <input
+          type="checkbox"
+          checked={rememberMe}
+          onChange={(e) => setRememberMe(e.target.checked)}
+        />{" "}
+        Recordarme
+      </label>
+      <button type="submit">Ingresar</button>
     </form>
   );
 }

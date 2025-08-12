@@ -4,7 +4,7 @@ import {
   createUser,
   getUserById,
   updateUser,
-} from "./UserService";
+} from "../../service/userService";
 
 const roles = [
   { value: "client", label: "Cliente" },

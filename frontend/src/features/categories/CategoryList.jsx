@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllCategories, deleteCategoryById } from "./CategoryService";
+import { getAllCategories, deleteCategoryById } from "../../service/CategoryService";
 import { Link } from "react-router-dom";
 
 export default function CategoryList() {

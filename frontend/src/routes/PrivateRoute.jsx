@@ -1,8 +1,8 @@
-import { Navigate } from "react-router-dom";
+import { getToken, getUser } from "../service/authService";
 
-export  function PrivateRouteAdmin({ children, role }) {
-  const token = localStorage.getItem("token");
-  const user = JSON.parse(localStorage.getItem("user"));
+export function PrivateRouteAdmin({ children, role }) {
+  const token = getToken();
+  const user = getUser();
 
   if (!token) return <Navigate to="/login" />;
   if (role && user?.role !== role) return <Navigate to="/home" />;
@@ -10,9 +10,8 @@ export  function PrivateRouteAdmin({ children, role }) {
   return children;
 }
 
-
 export function PrivateRouteLogin({ children }) {
-  const token = localStorage.getItem("token");
+  const token = getToken();
   if (!token) return <Navigate to="/login" />;
 
   return children;

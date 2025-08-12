@@ -21,6 +21,8 @@ import HomeClient from "./pages/client/HomeClient";
 import ProductsClient from "./pages/client/ProductsClient";
 import PerfilClient from "./pages/client/PerfilClient";
 import ClientLayout from "./layouts/ClientLayout";
+import CreateAddress from "./features/address/AddressCreate";
+import Checkout from "./features/shipping/Checkout.jsx";
 // Redirección según rol
 import HomeRedirect from "./components/HomeRedirect";
 
@@ -67,6 +69,8 @@ function App() {
           <Route path="productos" element={<ProductsClient />} />
           <Route path="perfil" element={<PerfilClient />} />
           <Route path="carrito" element={<Cart />} />
+          <Route path="direccion/crear" element={<CreateAddress />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
 
         {/* Admin con rutas anidadas */}

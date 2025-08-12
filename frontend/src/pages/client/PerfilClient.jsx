@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { getUserById } from "../../service/userService"; // importar service
+import { getUser } from "../../service/authService";
 
 export default function PerfilCliente() {
   const [usuario, setUsuario] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = getUser();
+    if (!user?.id) return;
 
-    if (!user?.id || !token) return;
-
-    axios.get(`http://localhost:3000/users/${user.id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then((res) => setUsuario(res.data))
-    .catch((err) => console.error("Error al obtener perfil", err));
+    getUserById(user.id)
+      .then(setUsuario)
+      .catch((err) => console.error("Error al obtener perfil", err));
   }, []);
 
   if (!usuario) return <div className="p-6">Cargando perfil...</div>;

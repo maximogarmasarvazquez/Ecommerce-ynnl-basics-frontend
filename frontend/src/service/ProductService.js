@@ -1,16 +1,7 @@
 import axios from "axios";
-
+import { getAuthConfig } from "./getAuthConfig";
 const API_URL = "http://localhost:3000";
 
-// Función para obtener siempre el token más reciente
-const getAuthConfig = () => {
-  const token = localStorage.getItem("token");
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-};
 
 // Productos
 export const getAllProducts = async () => {

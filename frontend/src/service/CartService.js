@@ -1,14 +1,7 @@
 // service/CartService.js
 import axios from "axios";
-
+import { getAuthConfig } from "./getAuthConfig";
 const API_URL = "http://localhost:3000";
-
-const getAuthConfig = () => {
-  const token = localStorage.getItem("token");
-  return {
-    headers: { Authorization: `Bearer ${token}` },
-  };
-};
 
 export const getMyCart = async () => {
   const response = await axios.get(`${API_URL}/carts/me`, getAuthConfig());
